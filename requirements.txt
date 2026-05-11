@@ -1,0 +1,10 @@
+langchain-community
+langchain-huggingface
+langchain-chroma
+pypdf
+sentence-transformers
+google-generativeai
+fastapi
+uvicorn
+requests
+python-multipart
