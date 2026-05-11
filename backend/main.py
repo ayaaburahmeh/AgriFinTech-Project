@@ -5,29 +5,37 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import google.generativeai as genai
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_chroma import Chroma
 
+# 1. إعداد التطبيق (FastAPI)
 app = FastAPI()
 
+# السماح للويبسايت بالوصول للبيانات (CORS)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
-import os # تأكدي من وجود هذا السطر في أعلى الملف
 
-# بدلاً من وضع المفتاح يدوياً، الكود سيسحبه من إعدادات Render السحرية
+# 2. إعدادات المفاتيح والموديلات
+# الكود سيسحب المفتاح من Environment Variables في Render
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 genai.configure(api_key=GOOGLE_API_KEY)
 
-# استخدام مسارات نسبية مرنة
+# إعداد المسارات للوصول للمجلدات (data و database)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB_PATH = os.path.join(BASE_DIR, "database", "chroma_db")
 DATA_PATH = os.path.join(BASE_DIR, "data", "crops_data.json")
 
-embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+# استخدام Google Embeddings (خفيف جداً ولا يستهلك الرام في Render)
+embeddings = GoogleGenerativeAIEmbeddings(
+    model="models/embedding-001", 
+    google_api_key=GOOGLE_API_KEY
+)
+
+# تحميل قاعدة البيانات
 vector_db = Chroma(persist_directory=DB_PATH, embedding_function=embeddings)
 
 JORDAN_CITIES = {
@@ -39,6 +47,7 @@ JORDAN_CITIES = {
     "الكرك": {"lat": 31.18, "lon": 35.70},
 }
 
+# 3. الدوال المساعدة
 def get_soil(lat, lon):
     try:
         url = f"https://rest.isric.org/soilgrids/v2.0/properties/query?lon={lon}&lat={lat}&property=phh2o&property=clay&depth=0-5cm&value=mean"
@@ -56,7 +65,7 @@ def get_soil(lat, lon):
         else: soil_results["وصف_التربة"] = "تربة حامضية"
         return soil_results
     except:
-        return {"حموضة_التربة": 7.5, "نسبة_الطين_بالمئة": 30.0, "وصف_التربة": "قاعدية طينية (متوسط)"}
+        return {"حموضة_التربة": 7.5, "نسبة_الطين_بالمئة": 30.0, "وصف_التربة": "قاعدية طينية (متوسط الأردن)"}
 
 def get_all_data(f_name, c_name, city, area, loan, exp):
     loc = JORDAN_CITIES.get(city)
@@ -69,6 +78,7 @@ def get_all_data(f_name, c_name, city, area, loan, exp):
     w_url = f"https://api.open-meteo.com/v1/forecast?latitude={loc['lat']}&longitude={loc['lon']}&daily=temperature_2m_max&timezone=Asia/Amman"
     temp = requests.get(w_url).json()["daily"]["temperature_2m_max"][0]
     
+    # البحث في الـ RAG
     results = vector_db.similarity_search(f"إرشادات زراعة {c_name}", k=3)
     context = "\n".join([res.page_content for res in results])
 
@@ -78,6 +88,7 @@ def get_all_data(f_name, c_name, city, area, loan, exp):
         "الحرارة_الحالية": temp, "بيانات_التربة": get_soil(loc['lat'], loc['lon']), "توصية_النظام": context[:500]
     }
 
+# 4. واجهة الـ API
 class FarmerRequest(BaseModel):
     farmer_name: str
     crop_name: str
@@ -91,7 +102,6 @@ async def analyze(data: FarmerRequest):
     bundle = get_all_data(data.farmer_name, data.crop_name, data.city_name, data.land_area, data.loan_amount, data.experience_years)
     
     model = genai.GenerativeModel('gemini-1.5-flash')
-    # البرومبت الأردني اللي اتفقنا عليه
     prompt = f"""
     أنت مستشار زراعي أردني خبير. حلل هذه البيانات للمزارع {bundle['اسم_المزارع']}:
     {json.dumps(bundle, ensure_ascii=False)}
