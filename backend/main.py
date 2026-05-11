@@ -16,8 +16,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+import os # تأكدي من وجود هذا السطر في أعلى الملف
 
-GOOGLE_API_KEY = "AIzaSyAVxyE49x8sdKRt8NAZo73WKFuV1XA6ZGY"
+# بدلاً من وضع المفتاح يدوياً، الكود سيسحبه من إعدادات Render السحرية
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 genai.configure(api_key=GOOGLE_API_KEY)
 
 # استخدام مسارات نسبية مرنة
