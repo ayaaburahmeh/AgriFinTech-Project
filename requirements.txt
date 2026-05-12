@@ -6,3 +6,4 @@ langchain-chroma
 pypdf
 sentence-transformers
 python-multipart
+firebase-admin
