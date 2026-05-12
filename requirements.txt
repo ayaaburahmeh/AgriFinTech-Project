@@ -1,8 +1,8 @@
 fastapi
 uvicorn
 google-generativeai
-langchain-google-genai
+langchain-huggingface
 langchain-chroma
 pypdf
-requests
+sentence-transformers
 python-multipart
