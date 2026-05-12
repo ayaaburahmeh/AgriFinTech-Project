@@ -5,7 +5,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import google.generativeai as genai
-from langchain_google_genai import GoogleGenerativeAIEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
 
 # 1. إعداد التطبيق (FastAPI)
@@ -30,12 +30,7 @@ DB_PATH = os.path.join(BASE_DIR, "database", "chroma_db")
 DATA_PATH = os.path.join(BASE_DIR, "data", "crops_data.json")
 
 # استخدام Google Embeddings (خفيف جداً ولا يستهلك الرام في Render)
-embeddings = GoogleGenerativeAIEmbeddings(
-    model="models/embedding-001", 
-    google_api_key=GOOGLE_API_KEY
-)
-
-# تحميل قاعدة البيانات
+embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 vector_db = Chroma(persist_directory=DB_PATH, embedding_function=embeddings)
 
 JORDAN_CITIES = {
