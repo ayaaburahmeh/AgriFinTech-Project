@@ -96,7 +96,7 @@ class FarmerRequest(BaseModel):
 async def analyze(data: FarmerRequest):
     bundle = get_all_data(data.farmer_name, data.crop_name, data.city_name, data.land_area, data.loan_amount, data.experience_years)
     
-    model = genai.GenerativeModel('gemini-1.5-flash')
+    model = genai.GenerativeModel('gemini-2.5-flash')
     prompt = f"""
     أنت مستشار زراعي أردني خبير. حلل هذه البيانات للمزارع {bundle['اسم_المزارع']}:
     {json.dumps(bundle, ensure_ascii=False)}
