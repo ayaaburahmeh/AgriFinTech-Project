@@ -1,10 +1,8 @@
-langchain-community
-langchain-huggingface
-langchain-chroma
-pypdf
-sentence-transformers
-google-generativeai
 fastapi
 uvicorn
+google-generativeai
+langchain-google-genai
+langchain-chroma
+pypdf
 requests
 python-multipart
