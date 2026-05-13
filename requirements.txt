@@ -7,3 +7,5 @@ pypdf
 sentence-transformers
 python-multipart
 firebase-admin
+langchain-google-genai
+langchain-community
