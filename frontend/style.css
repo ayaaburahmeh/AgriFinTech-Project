@@ -376,3 +376,69 @@ footer {
   padding: 45px 7%;
   margin-top: 50px;
 }
+
+
+
+
+
+
+
+
+
+
+
+/* تنسيق شبكة الحلول (الجزء المكسور في الصورة) */
+.solution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.solution-card {
+    background: white;
+    padding: 35px;
+    border-radius: 28px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    text-align: center;
+    border: 1px solid #efe2c8;
+    cursor: pointer;
+}
+
+.solution-card:hover {
+    transform: translateY(-10px);
+    border-color: #b39155;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.solution-card .icon {
+    font-size: 45px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.solution-card h3 {
+    margin: 10px 0;
+    color: #143d2f;
+    font-size: 22px;
+}
+
+.solution-card p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+/* تمييز بطاقة القروض */
+.solution-card.special {
+    background: #fdfaf4;
+    border: 2px solid #b39155;
+}
+
+.sub-title {
+    color: #6f766f;
+    font-size: 18px;
+    margin-top: -10px;
+    margin-bottom: 30px;
+}
