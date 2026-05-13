@@ -80,8 +80,9 @@ Utilizing **Google Gemini 1.5 Pro** as the core synthesizer to transform multi-d
 ---
 
 ## 👩‍💻 The Team
-* **Aya Abu Rahmeh:** Backend Development, AI Engineering, RAG Integration, & Cloud Architecture.
-* **Ruaa:** Frontend Design & Bank Dashboard UI/UX.
+* **Roaa Mustafa**
+* **Farah Abdullah**
+* **Sedra bilal**
 
 ---
 **AgriFinTech Jordan** | *Empowering the Kingdom's Farmers with Data.*
