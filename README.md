@@ -3,6 +3,13 @@
 
 ---
 
+## 🔗 Quick Links
+* **Live Web Application:** [AgriFinTech Interface (Netlify)](https://astounding-semifreddo-1ef5ac.netlify.app/) — *The interactive user portal for farmers and bank officers.*
+* **AI Model & Backend:** [Hugging Face Spaces](https://huggingface.co/spaces/ayaaburahmeh/AgriFinTech-Project) — *The core AI engine, RAG pipeline, and API hosting.*
+* **Source Code:** [GitHub Repository](https://github.com/ayaaburahmeh/AgriFinTech-Project) — *The complete codebase, documentation, and technical architecture.*
+
+---
+
 ## 📈 The Challenge: Bridging Jordan's "Data Gap"
 Despite agriculture contributing **~7.2% to Jordan's GDP**, nearly **70% of agricultural loan applications are rejected**. 
 Small-scale farmers in regions like **Al-Ghor, Mafraq, and Irbid** operate in a "data vacuum," lacking formal credit records. This creates **Information Asymmetry**, leading traditional banks to perceive agricultural lending as high-risk.
@@ -50,7 +57,7 @@ Utilizing **Google Gemini 1.5 Pro** as the core synthesizer to transform multi-d
 * **Automated Credit Scoring:** Instant approval/rejection probability calculation.
 * **Localized Advisory:** Reports generated in **Jordanian Arabic** to build trust and provide actionable insights for farmers.
 * **Institutional Transparency:** Provides "The Why" behind every decision, explaining risk factors to bank officers.
-* **Bank Dashboard (MVP):** A real-time interface for loan officers to manage, filter, and approve AI-generated reports.
+* **Bank Dashboard (MVP):** Real-time interface for loan officers to manage, filter, and approve AI-generated reports.
 
 ---
 
@@ -73,10 +80,8 @@ Utilizing **Google Gemini 1.5 Pro** as the core synthesizer to transform multi-d
 ---
 
 ## 👩‍💻 The Team
-* **Roaa Mustafa**
-* **Farah Abdullah**
-* **Sedra Bilal**
-
+* **Aya Abu Rahmeh:** Backend Development, AI Engineering, RAG Integration, & Cloud Architecture.
+* **Ruaa:** Frontend Design & Bank Dashboard UI/UX.
 
 ---
 **AgriFinTech Jordan** | *Empowering the Kingdom's Farmers with Data.*
