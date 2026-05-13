@@ -174,12 +174,10 @@
         const submitBtn = document.getElementById('submitBtn');
         const reportContent = document.getElementById('reportContent');
 
-        // 1. إظهار رسالة الانتظار
         loading.style.display = 'block';
         resultSection.style.display = 'none';
         submitBtn.disabled = true;
 
-        // 2. تجميع البيانات من الفورم
         const formData = {
             farmer_name: document.getElementById('farmerName').value,
             crop_name: document.getElementById('crop').value,
@@ -190,7 +188,6 @@
         };
 
         try {
-            // 3. الاتصال بسيرفر Render (استبدلي الرابط أدناه برابطك الحقيقي)
             const response = await fetch('https://ayaaburahmeh-agrifintech-project.hf.space/analyze', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
