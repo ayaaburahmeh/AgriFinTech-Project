@@ -4,8 +4,8 @@
 ---
 
 ## 🔗 Quick Links
-* **Live Web Application:** [AgriFinTech Interface (Netlify)](https://astounding-semifreddo-1ef5ac.netlify.app/) — *The interactive user portal for farmers and bank officers.*
-* **AI Model & Backend:** [Hugging Face Spaces](https://huggingface.co/spaces/ayaaburahmeh/AgriFinTech-Project) — *The core AI engine, RAG pipeline, and API hosting.*
+* **Live Web Application:** [AgriFinTech Interface (Netlify)](https://albankadowali.netlify.app/) — *The interactive user portal for farmers and bank officers.*
+* **AI Model & Backend:** [Hugging Face Spaces](https://huggingface.co/spaces/ayaaburahmeh/AgriFinTech-Project/tree/main) — *The core AI engine, RAG pipeline, and API hosting.*
 * **Source Code:** [GitHub Repository](https://github.com/ayaaburahmeh/AgriFinTech-Project) — *The complete codebase, documentation, and technical architecture.*
 
 ---
