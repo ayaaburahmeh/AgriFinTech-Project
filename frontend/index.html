@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>البنك الدولي - تمويل زراعي ذكي</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="top-bar">
+  <span>English</span>
+  <span>الأردن 🇯🇴</span>
+  <span>الفروع</span>
+  <span>الدعم</span>
+</header>
+
+<header class="main-header">
+  <div class="logo">
+    <img src="images/logo.png" alt="البنك الدولي" class="bank-logo">
+    <div class="logo-text">
+        <h1>البنك الدولي</h1>
+        <p>International Bank</p>
+    </div>
+  </div>
+
+  <nav>
+    <a href="#solutions">الخدمات</a>
+    <a onclick="openLoansPage()">القروض</a>
+    <a href="#digital">الخدمات الرقمية</a>
+    <a href="#contact">تواصل معنا</a>
+  </nav>
+
+  <button onclick="openLoansPage()">افتح طلبك</button>
+</header>
+
+<main id="homePage">
+  <section class="hero">
+    <div class="hero-content">
+      <span class="badge">بنك ذكي للمستقبل</span>
+      <h2>حلول مصرفية حديثة تدعم الأفراد والمزارعين</h2>
+      <p>تمويل، حسابات، بطاقات، وخدمات رقمية بتجربة احترافية وآمنة.</p>
+
+      <div class="hero-actions">
+        <button onclick="openLoansPage()">استكشف القروض</button>
+        <button class="outline" onclick="openFarmerLoan()">قرض المزارعين</button>
+      </div>
+    </div>
+
+    <div class="floating-card">
+      <h3>خدمات سريعة</h3>
+      <p>💳 بطاقات</p>
+      <p>🏦 حسابات</p>
+      <p>💰 قروض</p>
+      <p>🌱 تمويل زراعي ذكي</p>
+    </div>
+  </section>
+
+  <section id="solutions" class="solutions">
+    <h2>حلولنا المصرفية الذكية</h2>
+    <p class="sub-title">مجموعة خدمات مصممة لتسهيل حياتك المالية</p>
+
+    <div class="solution-grid">
+      <div class="solution-card">
+        <div class="icon">📊</div>
+        <h3>إدارة الثروات</h3>
+        <p>حلول مالية لتنمية أصولك بأمان.</p>
+      </div>
+
+      <div class="solution-card">
+        <div class="icon">🏠</div>
+        <h3>التمويل العقاري</h3>
+        <p>خطط تمويل مرنة لمنزل أحلامك.</p>
+      </div>
+
+      <div class="solution-card">
+        <div class="icon">💳</div>
+        <h3>البطاقات المميزة</h3>
+        <p>بطاقات دفع آمنة وسهلة.</p>
+      </div>
+
+      <div class="solution-card special" onclick="openLoansPage()">
+        <div class="icon">💰</div>
+        <h3>القروض</h3>
+        <p>حلول تمويلية للأفراد والمشاريع والمزارعين.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="digital" class="digital">
+    <div>
+      <span class="badge">Digital Banking</span>
+      <h2>خدمات رقمية أسرع وأسهل</h2>
+      <p>تابع معاملاتك، قدّم طلباتك، واحصل على قرارات أولية من أي مكان.</p>
+    </div>
+  </section>
+</main>
+
+<section id="loansPage" class="loans-page hidden">
+  <button class="back-btn" onclick="goHome()">رجوع للرئيسية</button>
+
+  <h2>القروض</h2>
+  <p class="sub-title">اختر نوع القرض المناسب لك</p>
+
+  <div class="loan-types">
+    <div class="loan-card">
+      <span>👤</span>
+      <h3>القرض الشخصي</h3>
+      <p>تمويل سريع لتلبية احتياجاتك الشخصية.</p>
+      <button>اعرف أكثر</button>
+    </div>
+
+    <div class="loan-card">
+      <span>🏠</span>
+      <h3>القرض السكني</h3>
+      <p>تمويل يساعدك على امتلاك منزل أحلامك.</p>
+      <button>اعرف أكثر</button>
+    </div>
+
+    <div class="loan-card">
+      <span>🚗</span>
+      <h3>قرض السيارات</h3>
+      <p>تمويل مناسب لشراء سيارتك الجديدة.</p>
+      <button>اعرف أكثر</button>
+    </div>
+
+    <div class="loan-card farmer" onclick="openFarmerLoan()">
+      <small>مدعوم بالذكاء الاصطناعي</small>
+      <span>🌱</span>
+      <h3>قرض المزارعين</h3>
+      <p>تمويل زراعي ذكي حسب الأرض والمحصول والمنطقة.</p>
+      <button>تقدم الآن</button>
+    </div>
+  </div>
+</section>
+
+<section id="farmerLoanPage" class="farmer-page hidden">
+  <button class="back-btn" onclick="openLoansPage()">رجوع للقروض</button>
+
+  <div class="form-layout">
+    <aside class="form-info">
+      <span class="badge">تمويل زراعي ذكي</span>
+      <h2>قرض المزارعين</h2>
+      <p>نموذج احترافي يرسل بيانات المزرعة للنظام لتحليل أهلية القرض.</p>
+
+      <div class="steps-view">
+        <div class="step-dot active-dot">1</div>
+        <div class="line"></div>
+        <div class="step-dot">2</div>
+        <div class="line"></div>
+        <div class="step-dot">3</div>
+      </div>
+    </aside>
+
+    <form id="loanForm" class="farmer-form">
+      <div class="progress">
+        <div id="progressBar"></div>
+      </div>
+
+      <div class="form-step active-step">
+        <h3>بيانات المزارع</h3>
+        <label>اسم المزارع</label>
+        <input id="farmer_name" type="text" required />
+        <label>المنطقة</label>
+        <input id="city_name" type="text" placeholder="مثال: الأغوار، إربد، الكرك" required />
+        <button type="button" onclick="nextStep()">التالي</button>
+      </div>
+
+      <div class="form-step">
+        <h3>بيانات الأرض والمحصول</h3>
+        <label>نوع المحصول</label>
+        <select id="crop_name" required>
+          <option value="">اختر المحصول</option>
+          <option>بندورة</option>
+          <option>خيار</option>
+          <option>بطاطا</option>
+          <option>كوسا</option>
+          <option>زيتون</option>
+          <option>عنب</option>
+          <option>باميا خضراء</option>
+          <option>ليمون</option>
+          <option>بصل ناشف</option>
+        </select>
+        <label>مساحة الأرض بالدونم</label>
+        <input id="land_area" type="number" required />
+        <label>مصدر المياه</label>
+        <select id="water_source" required>
+          <option value="">اختر مصدر المياه</option>
+          <option>ري</option>
+          <option>أمطار</option>
+        </select>
+        <div class="form-buttons">
+          <button type="button" class="dark" onclick="prevStep()">السابق</button>
+          <button type="button" onclick="nextStep()">التالي</button>
+        </div>
+      </div>
+
+      <div class="form-step">
+        <h3>بيانات القرض</h3>
+        <label>سنوات الخبرة</label>
+        <input id="experience_years" type="number" required />
+        <label>مبلغ القرض المطلوب</label>
+        <input id="loan_amount" type="number" required />
+        <div class="form-buttons">
+          <button type="button" class="dark" onclick="prevStep()">السابق</button>
+          <button type="submit">احسب تقييمي</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- لوحة التحكم للنتائج (Dashboard) المحدثة -->
+  <div id="result" class="result-container hidden">
+    <div class="dashboard-header">
+      <h3>📊 لوحة تحليل أهلية القرض</h3>
+      <button class="print-btn" onclick="window.print()">تحميل التقرير PDF</button>
+    </div>
+
+    <div class="dashboard-grid">
+      <!-- بطاقة النتيجة النهائية -->
+      <div class="stat-card highlight">
+        <h4>الحالة النهائية</h4>
+        <div id="statusResult" class="status-badge">جاري التحليل...</div>
+      </div>
+
+      <!-- بطاقة مبلغ التمويل المتوقع -->
+      <div class="stat-card">
+        <h4>التمويل المقترح</h4>
+        <p id="suggestedAmount" class="stat-value">--</p>
+        <small>دينار أردني</small>
+      </div>
+
+      <!-- بطاقة تقييم المخاطر -->
+      <div class="stat-card">
+        <h4>مؤشر المخاطر</h4>
+        <div class="risk-meter">
+          <div id="riskLevel" class="risk-fill" style="width: 0%"></div>
+        </div>
+        <p id="riskText">--</p>
+      </div>
+    </div>
+
+    <!-- صندوق التحليل التفصيلي -->
+    <div class="analysis-details">
+      <h4>📝 التوصيات والتحليل الفني</h4>
+      <div id="detailedReport" class="report-text"></div>
+    </div>
+    
+    <!-- ميزة المحفظة (Wallet Preview) -->
+    <div class="wallet-preview">
+      <p>💰 سيتم تحويل الدفعة الأولى إلى <strong>محفظتك الإلكترونية</strong> فور التوقيع الرقمي.</p>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <h3>البنك الدولي</h3>
+  <p>خدمات مصرفية حديثة للأفراد والأعمال والمزارعين.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
