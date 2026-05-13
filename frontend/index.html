@@ -162,7 +162,21 @@
         <label>اسم المزارع</label>
         <input id="farmer_name" type="text" required />
         <label>المنطقة</label>
-        <input id="city_name" type="text" placeholder="مثال: الأغوار، إربد، الكرك" required />
+<select id="city_name" required>
+    <option value="" disabled selected>اختر المنطقة...</option>
+    <option value="الأغوار">الأغوار</option>
+    <option value="إربد">إربد</option>
+    <option value="الكرك">الكرك</option>
+    <option value="المفرق">المفرق</option>
+    <option value="عمان">عمان</option>
+    <option value="السلط">السلط</option>
+    <option value="جرش">جرش</option>
+    <option value="عجلون">عجلون</option>
+    <option value="مادبا">مادبا</option>
+    <option value="معان">معان</option>
+    <option value="الطفيلة">الطفيلة</option>
+    <option value="العقبة">العقبة</option>
+</select>
         <button type="button" onclick="nextStep()">التالي</button>
       </div>
 
