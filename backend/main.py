@@ -48,12 +48,10 @@ def extract_decision_data(report_text: str):
     decision = "غير محدد"
     suggested_amount = 0
 
-    # استخراج نسبة الموافقة
     match = re.search(r'نسبة الموافقة[^:]*:\s*(\d+)\s*%', report_text)
     if match:
         approval_rate = int(match.group(1))
 
-    # استخراج القرار
     if "موافق بشروط" in report_text:
         decision = "موافق بشروط"
     elif "مرفوض" in report_text:
@@ -61,7 +59,6 @@ def extract_decision_data(report_text: str):
     elif "موافق" in report_text:
         decision = "موافق"
 
-    # استخراج المبلغ المقترح
     match2 = re.search(r'المبلغ المناسب[^:]*:\s*([\d,]+)', report_text)
     if match2:
         suggested_amount = int(match2.group(1).replace(",", ""))
@@ -146,10 +143,8 @@ async def analyze(data: FarmerRequest):
     response = model.generate_content(prompt)
     report_text = response.text
 
-    # استخراج القرار والنسبة من التقرير
     approval_rate, decision, suggested_amount = extract_decision_data(report_text)
 
-    # حفظ في Firebase
     doc = {
         "farmer_name":      data.farmer_name,
         "crop_name":        data.crop_name,
