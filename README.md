@@ -82,7 +82,7 @@ Utilizing **Google Gemini 1.5 Pro** as the core synthesizer to transform multi-d
 ## 👩‍💻 The Team
 * **Roaa Mustafa**
 * **Farah Abdullah**
-* **Sedra bilal**
+* **Sedra belal**
 
 ---
 **AgriFinTech Jordan** | *Empowering the Kingdom's Farmers with Data.*
