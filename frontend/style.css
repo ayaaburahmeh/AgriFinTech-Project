@@ -378,3 +378,97 @@ footer {
         display: none !important;
     }
 }
+
+
+
+
+/* --- قسم الحلول المصرفية (التنسيق المطابق للصورة) --- */
+.solutions {
+    padding: 80px 7%;
+    text-align: center;
+    background-color: #f7f0e3; /* لون الخلفية الكريمي الهادئ */
+}
+
+.solutions h2 {
+    font-size: 42px;
+    color: #143d2f;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.sub-title {
+    font-size: 18px;
+    color: #6f766f;
+    margin-bottom: 50px;
+}
+
+/* شبكة البطاقات */
+.solution-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* تصميم البطاقة الموحد */
+.solution-card {
+    background: #ffffff;
+    border-radius: 30px; /* حواف مستديرة ناعمة */
+    padding: 40px 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* ظل خفيف جداً */
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 320px;
+    justify-content: center;
+    border: 1px solid transparent;
+}
+
+/* تأثير عند تمرير الماوس */
+.solution-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* تمييز بطاقة القروض (الإطار الذهبي) */
+.solution-card.special {
+    border: 2px solid #b39155;
+    background: linear-gradient(180deg, #ffffff 0%, #fff9ef 100%);
+}
+
+/* تنسيق الأيقونات (Emoji أو Image) */
+.solution-card .icon {
+    font-size: 50px;
+    margin-bottom: 25px;
+    display: block;
+}
+
+.solution-card h3 {
+    font-size: 26px;
+    color: #143d2f;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.solution-card p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 200px;
+}
+
+/* التجاوب مع الشاشات الصغيرة */
+@media (max-width: 1024px) {
+    .solution-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .solution-grid {
+        grid-template-columns: 1fr;
+    }
+}
